@@ -10,8 +10,6 @@ Table of Contents
 5 Running the Scraping Script
 6 Running the Streamlit Application
 7 Deliverables
-8 Contributing
-9 License
 
 Introduction
 
@@ -85,9 +83,3 @@ Source Code: The complete source code for the data scraping script and the Strea
 SQL Scripts: SQL scripts for creating and populating the database.
 Documentation: This README file with detailed instructions.
 Streamlit Application: A web application to visualize and analyze the scraped bus route data.
-
-Contributing
-Contributions are not welcome.
-
-License
-This project is licensed under the MIT License. See the LICENSE file for more details.
