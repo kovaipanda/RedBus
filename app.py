@@ -33,6 +33,9 @@ df["reaching_time"] = df["reaching_time"].apply(lambda x: f"{int(x.hours):02}:{i
 # Fill None values in the price column with 0 and convert to integers
 df["price"] = df["price"].fillna(0).astype(int)
 
+# Calculate the maximum price from the data
+max_price_value = df["price"].max()
+
 # Streamlit application layout
 st.set_page_config(page_title="Bus Routes Dashboard", layout="wide")
 
@@ -57,7 +60,7 @@ route_name = st.sidebar.selectbox("Select Route Name", ["All"] + list(df["route_
 bus_name = st.sidebar.selectbox("Select Bus Name", ["All"] + list(df["busname"].unique()))
 bus_type = st.sidebar.selectbox("Select Bus Type", ["All"] + list(df["bustype"].unique()))
 min_star_rating = st.sidebar.slider("Minimum Star Rating", min_value=0.0, max_value=5.0, step=0.1, value=0.0)
-max_price = st.sidebar.slider("Maximum Price", min_value=0, max_value=7619, step=10, value=7619)
+max_price = st.sidebar.slider("Maximum Price", min_value=0, max_value=int(max_price_value), step=10, value=int(max_price_value))
 
 # Filter the data based on selections
 filtered_data = df[
