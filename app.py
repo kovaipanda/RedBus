@@ -33,7 +33,6 @@ df["reaching_time"] = df["reaching_time"].apply(lambda x: f"{int(x.hours):02}:{i
 # Fill None values in the price column with 0 and convert to integers
 df["price"] = df["price"].fillna(0).astype(int)
 
-
 # Streamlit application layout
 st.set_page_config(page_title="Bus Routes Dashboard", layout="wide")
 
@@ -86,10 +85,6 @@ for i, row in filtered_data.iterrows():
     st.write(f"**Star Rating**: {row['star_rating']}")
     st.write(f"**Price**: {row['price']}")
     st.write(f"**Seats Available**: {row['seats_available']}")
-
-# Summary statistics
-st.markdown("### Summary Statistics")
-st.write(filtered_data.describe())
 
 # Charts
 st.markdown("### Data Visualization")
