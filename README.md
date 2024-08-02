@@ -91,6 +91,5 @@ Streamlit application showing data filtering/ analysis
 ![C](https://github.com/user-attachments/assets/b8488712-e6dd-4355-8bfb-fe5f1bde480a)
 ![C5](https://github.com/user-attachments/assets/2ba53f69-ee73-4601-94d5-c5523e08453f)
 ![C4](https://github.com/user-attachments/assets/211040c4-5cf3-4001-ad10-c1a00597bbf4)
-![C3](https://github.com/user-attachments/assets/55c276f2-7c71-402d-a9ba-c93c3deb5cc3)
 ![C2](https://github.com/user-attachments/assets/aa515db8-96e1-4185-841b-e09eb47ed45d)
 
