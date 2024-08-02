@@ -18,7 +18,7 @@ driver = webdriver.Chrome()
 # Open the target website
 driver.get("https://www.redbus.in/online-booking/rtc-directory")
 
-# Wait for the page to load
+
 time.sleep(2.5)
 
 # Extract all State Bus Route URLs from the main page
@@ -28,7 +28,6 @@ state_bus_route_links = [
 ]
 
 def extract_bus_route_names_and_links():
-   
     time.sleep(2.5)
 
     # Extract Bus Route Names and Links from the current page
@@ -122,7 +121,12 @@ def extract_bus_details(bus_route_link):
                 price_text = block.find_element(By.CSS_SELECTOR, ".fare.d-block").text
                 # Remove non-numeric characters
                 price_digits = ''.join(filter(str.isdigit, price_text))
-                bus["Price"] = float(price_digits) if price_digits else None
+                if len(price_digits) == 6:
+                    bus["Price"] = float(price_digits[:3])
+                elif len(price_digits) == 8:
+                    bus["Price"] = float(price_digits[:4])
+                else:
+                    bus["Price"] = float(price_digits) if price_digits else None
             except Exception as e:
                 print(f"Error extracting price: {e}")
                 bus["Price"] = None
@@ -167,7 +171,7 @@ def extract_bus_details(bus_route_link):
                     "arguments[0].scrollIntoView();", next_page
                 )  # Ensure the element is in view
                 next_page.click()
-                time.sleep(2.5)  # Wait for the page to load
+                time.sleep(2.5)  
             else:
                 break
         except Exception as e:
